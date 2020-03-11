@@ -13,17 +13,19 @@ export default (state = initialState, action) => {
                 ...state,
                 items: action.payload,
                 loading: false
-            }
+            };
         case NEW_POST:
+            console.log('hello');
             return {
                 ...state,
-                items: [action.payload, ...state.items ]
-            }
+                items: [action.payload, ...state.items],
+                item: action.payload
+            };
         case SET_LOADING:
             return {
                 ...state,
                 loading: true
-            }
+            };
         default:
             return state;
     }
